@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "sistemaagendamento-94acb"
-  }
+    "default": "cliente-interface-build",
+    "n": "sistemaagendamento-94acb",
+    "staging": "cliente-interface-build"
+  },
+  "targets": {},
+  "etags": {}
 }

@@ -13,7 +13,7 @@ class PaginaInicial extends StatefulWidget {
 class _PaginaInicialState extends State<PaginaInicial> {
 
   final dropvalue = ValueNotifier('');
-  final dropOpcoes = ['Dr.João', 'Dr.Amanda', 'Dr.Antônio'];
+  final dropOpcoes = ['Dr.João', 'Dr.Amanda', 'Dr.Antônio','daniel','amanda','lucio','pereira','amanda','iago','tereza','luiza','lucas','marcos','matheus','junior','simone','vanderson','manuel','ricardo','gustavo','cristina'];
 
   @override
   Widget build(BuildContext context) {
@@ -27,23 +27,36 @@ class _PaginaInicialState extends State<PaginaInicial> {
           valueListenable: dropvalue,
           builder: (BuildContext contex, String value, _) {
             return Center(
-              child: DropdownButton<String>(
-                hint: const Text('Selecione o Doutor(a)'),
-                value: (value.isEmpty) ? null : value,
-                onChanged: (escolha) {
-                  dropvalue.value = escolha.toString();
-                  if(dropvalue.value=='Dr.João'){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => PageAgendamento(nome_doutor:  dropvalue.value),));
-                  }
-                },
-                items: dropOpcoes
-                    .map(
-                      (op) => DropdownMenuItem(
-                    child: Text(op),
-                    value: op,
+              child: SizedBox(
+                width: 300,
+                child: SafeArea(
+                  child: DropdownButtonFormField<String>(
+                    isExpanded: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(6),
+                        borderSide: BorderSide(color: Colors.deepPurpleAccent,)
+                      ),
+                    ),
+                    icon: Icon(Icons.accessibility_outlined),
+                    hint: const Text('Selecione o Doutor(a)'),
+                    value: (value.isEmpty) ? null : value,
+                    onChanged: (escolha) {
+                      dropvalue.value = escolha.toString();
+                      if(dropvalue.value=='Dr.João'){
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => PageAgendamento(nome_doutor:  dropvalue.value),));
+                      }
+                    },
+                    items: dropOpcoes
+                        .map(
+                          (op) => DropdownMenuItem(
+                        child: Text(op),
+                        value: op,
+                      ),
+                    )
+                        .toList(),
                   ),
-                )
-                    .toList(),
+                ),
               ),
             );
 
