@@ -77,6 +77,7 @@ class _PageAgendamentoState extends State<PageAgendamento> {
           children: [
             TextFormField(
               controller: controllerCPF,
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                   labelText: "CPF",
                   border: OutlineInputBorder(
@@ -92,6 +93,7 @@ class _PageAgendamentoState extends State<PageAgendamento> {
             SizedBox(height: 10,),
             TextFormField(
               controller: controllerNOME,
+              keyboardType: TextInputType.text,
               decoration: InputDecoration(
                   labelText: "NOME",
                   border: OutlineInputBorder(
@@ -107,6 +109,7 @@ class _PageAgendamentoState extends State<PageAgendamento> {
             SizedBox(height: 10,),
             TextFormField(
               controller: controllerNUMERO,
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                   labelText: "NÚMERO DE WHATSAPP",
                   border: OutlineInputBorder(

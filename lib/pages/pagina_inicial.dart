@@ -13,7 +13,7 @@ class PaginaInicial extends StatefulWidget {
 class _PaginaInicialState extends State<PaginaInicial> {
 
   final dropvalue = ValueNotifier('');
-  final dropOpcoes = ['Dr.João', 'Dr.Amanda', 'Dr.Antônio'];
+  final dropOpcoes = ['Dr.João'];
 
   @override
   Widget build(BuildContext context) {
