@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:sistema_agendamento/pages/page_agendamento.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+
 import 'package:sistema_agendamento/pages/pagina_inicial.dart';
 
 import 'firebase_options.dart';
@@ -27,6 +28,14 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      localizationsDelegates: [
+        // Add this line
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+
+      ],
+      supportedLocales: [const Locale('pt', 'BR')],
       home: PaginaInicial(),
     );
   }

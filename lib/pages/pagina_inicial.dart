@@ -13,7 +13,7 @@ class PaginaInicial extends StatefulWidget {
 class _PaginaInicialState extends State<PaginaInicial> {
 
   final dropvalue = ValueNotifier('');
-  final dropOpcoes = ['Dr.João'];
+  final dropOpcoes = ['Dr.Robert'];
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class _PaginaInicialState extends State<PaginaInicial> {
                     value: (value.isEmpty) ? null : value,
                     onChanged: (escolha) {
                       dropvalue.value = escolha.toString();
-                      if(dropvalue.value=='Dr.João'){
+                      if(dropvalue.value=='Dr.Robert'){
                         Navigator.of(context).push(MaterialPageRoute(builder: (context) => PageAgendamento(nome_doutor:  dropvalue.value),));
                       }
                     },
